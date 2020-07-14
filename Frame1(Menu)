@@ -1,0 +1,183 @@
+import java.awt.EventQueue;
+
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import java.awt.BorderLayout;
+import javax.swing.JLabel;
+import javax.swing.JScrollPane;
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.SystemColor;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+public class Project0 {
+
+	private JFrame frame;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Project0 window = new Project0();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public Project0() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frame = new JFrame();
+		 frame.setSize(900,600);
+	      frame.setLocationRelativeTo(null);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+      frame.setVisible(true);
+		
+		JPanel panel = new JPanel();
+		panel.setLayout(null);
+		frame.getContentPane().add(panel);
+		
+		JPanel panel_1 = new JPanel();
+		panel_1.setBackground(new Color(255, 215, 0));
+		panel_1.setBounds(10, 10, 866, 178);
+		panel_1.setLayout(null);
+		panel.add(panel_1);
+		
+		JLabel lblNewLabel = new JLabel("Standard Operating Procedure (SOP)");
+		lblNewLabel.setFont(new Font("Gabriola", Font.PLAIN, 55));
+		lblNewLabel.setBounds(92, 37, 697, 160);
+		panel_1.add(lblNewLabel);
+		
+		JPanel panel_2 = new JPanel();
+		panel_2.setBackground(new Color(255, 192, 203));
+		panel_2.setBounds(10, 198, 273, 355);
+		panel_2.setLayout(null);
+		panel.add(panel_2);
+		
+		JLabel lblNewLabel_1 = new JLabel("STAY HOME");
+		lblNewLabel_1.setForeground(new Color(165, 42, 42));
+		lblNewLabel_1.setFont(new Font("Segoe UI Black", Font.PLAIN, 18));
+		lblNewLabel_1.setBounds(85, 61, 120, 39);
+		panel_2.add(lblNewLabel_1);
+		
+		JLabel lblNewLabel_2 = new JLabel("STAY SAFE");
+		lblNewLabel_2.setForeground(new Color(218, 165, 32));
+		lblNewLabel_2.setFont(new Font("Segoe UI Black", Font.PLAIN, 18));
+		lblNewLabel_2.setBounds(92, 170, 113, 39);
+		panel_2.add(lblNewLabel_2);
+		
+		JLabel lblNewLabel_3 = new JLabel("OR");
+		lblNewLabel_3.setFont(new Font("Segoe UI Black", Font.PLAIN, 14));
+		lblNewLabel_3.setBounds(126, 123, 34, 26);
+		panel_2.add(lblNewLabel_3);
+		
+		JLabel lblNewLabel_4 = new JLabel("OR");
+		lblNewLabel_4.setFont(new Font("Segoe UI Black", Font.PLAIN, 14));
+		lblNewLabel_4.setBounds(126, 231, 34, 26);
+		panel_2.add(lblNewLabel_4);
+		
+		JLabel lblNewLabel_5 = new JLabel("STAY HEALTY");
+		lblNewLabel_5.setForeground(new Color(189, 183, 107));
+		lblNewLabel_5.setFont(new Font("Segoe UI Black", Font.PLAIN, 18));
+		lblNewLabel_5.setBounds(87, 286, 162, 26);
+		panel_2.add(lblNewLabel_5);
+		
+		JPanel panel_3 = new JPanel();
+		panel_3.setBackground(SystemColor.info);
+		panel_3.setBounds(303, 198, 573, 355);
+		panel_3.setLayout(null);
+		panel.add(panel_3);
+		
+		JButton btnNewButton = new JButton("House");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				frame.dispose();
+				new Project3();
+			}
+		});
+		btnNewButton.setForeground(new Color(0, 0, 205));
+		btnNewButton.setFont(new Font("Segoe Print", Font.PLAIN, 18));
+		btnNewButton.setBackground(Color.ORANGE);
+		btnNewButton.setBounds(44, 121, 171, 60);
+		panel_3.add(btnNewButton);
+		
+		JLabel lblNewLabel_6 = new JLabel("Pick one To Know More!");
+		lblNewLabel_6.setForeground(new Color(255, 0, 255));
+		lblNewLabel_6.setFont(new Font("Times New Roman", Font.PLAIN, 40));
+		lblNewLabel_6.setBounds(74, 10, 425, 124);
+		panel_3.add(lblNewLabel_6);
+		
+		JButton button = new JButton("Home");
+      button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+         frame.dispose();
+				new Project3();
+			}
+		});
+
+		button.setForeground(new Color(0, 0, 205));
+		button.setFont(new Font("Segoe Print", Font.PLAIN, 18));
+		button.setBackground(Color.ORANGE);
+		button.setBounds(44, 121, 171, 60);
+		panel_3.add(button);
+		
+		JButton btnGolfclub = new JButton("Golfclub");
+		btnGolfclub.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+         frame.dispose();
+				new Project4();
+			}
+		});
+		btnGolfclub.setForeground(new Color(0, 0, 205));
+		btnGolfclub.setFont(new Font("Segoe Print", Font.PLAIN, 18));
+		btnGolfclub.setBackground(Color.ORANGE);
+		btnGolfclub.setBounds(44, 228, 171, 60);
+		panel_3.add(btnGolfclub);
+		
+		JButton btnBuilding = new JButton("Building");
+		btnBuilding.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+         frame.dispose();
+				new Project2();
+			}
+		});
+		btnBuilding.setForeground(new Color(0, 0, 205));
+		btnBuilding.setFont(new Font("Segoe Print", Font.PLAIN, 18));
+		btnBuilding.setBackground(Color.ORANGE);
+		btnBuilding.setBounds(328, 121, 171, 60);
+		panel_3.add(btnBuilding);
+		
+		JButton btnUniversity = new JButton("University");
+      btnUniversity.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+         frame.dispose();
+				new Project();
+			}
+		});
+
+		btnUniversity.setForeground(new Color(0, 0, 205));
+		btnUniversity.setFont(new Font("Segoe Print", Font.PLAIN, 18));
+		btnUniversity.setBackground(Color.ORANGE);
+		btnUniversity.setBounds(328, 228, 171, 60);
+		panel_3.add(btnUniversity);
+		
+		
+	}
+}
