@@ -1,0 +1,149 @@
+import java.awt.Color;
+
+import java.awt.EventQueue;
+import java.awt.Font;
+import java.awt.Window;
+
+import java.util.Scanner;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+import javax.swing.JEditorPane;
+import javax.swing.JTextPane;
+import javax.swing.JTextArea;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.awt.event.ActionEvent;
+import javax.swing.JLabel;
+import java.io.File;
+
+public class Edit1 {
+
+	private JFrame frame;
+	private JLabel lblNewLabel;
+
+		public Edit1() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+	frame = new JFrame();
+		
+		frame.setSize(900,600);
+	      frame.setLocationRelativeTo(null);
+	      frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	      
+	      JPanel panel = new JPanel();
+	      frame.getContentPane().add(panel);
+	      frame.setVisible(true);
+	      panel.setLayout(null);
+	      
+	      JPanel panel_1 = new JPanel();
+	      panel_1.setBackground(Color.PINK);
+	      panel_1.setBounds(227, 96, 444, 457);
+	      panel_1.setLayout(null);
+	      panel.add(panel_1);
+	      
+	      JTextArea textArea = new JTextArea();
+	      textArea.setBounds(10, 10, 424, 364);
+	      panel_1.add(textArea);
+	      
+	      JButton btnNewButton = new JButton("Update");
+	      btnNewButton.addActionListener(new ActionListener() {
+	      	public void actionPerformed(ActionEvent e) {
+	      		
+	      		String data = textArea.getText();
+	      	
+	      
+	      		 try {
+	      	            BufferedWriter writer = new BufferedWriter(new FileWriter("/Users/User/Desktop/Student.txt"));
+
+	      	            writer.write(data);
+
+	      	            writer.close();
+	      	        } catch (IOException ex) {
+	      	        	 
+	      	        }
+	      		 
+	      
+	      		lblNewLabel.setVisible(true);
+	      		btnNewButton.setVisible(false);
+	      	}
+	      });
+	      btnNewButton.setBounds(178, 402, 85, 30);
+	      panel_1.add(btnNewButton);
+	      
+	      lblNewLabel = new JLabel("Success Add !!!");
+	      lblNewLabel.setFont(new Font("Times New Roman", Font.PLAIN, 19));
+	      lblNewLabel.setBounds(156, 397, 149, 36);
+	      lblNewLabel.setVisible(false);
+	      panel_1.add(lblNewLabel);
+	      
+	      JPanel panel_2 = new JPanel();
+	      panel_2.setBackground(new Color(127, 255, 0));
+	      panel_2.setBounds(10, 10, 207, 543);
+	      panel_2.setLayout(null);
+	      panel.add(panel_2);
+	      
+	      JButton btnDisplay = new JButton("Display");
+	      btnDisplay.addActionListener(new ActionListener() {
+	      	public void actionPerformed(ActionEvent e) {
+	      	try
+	      	    {
+	      	      File file=new File("/Users/User/Desktop/Student.txt");
+	      	      Scanner scan= new Scanner(file);
+	      	       String content = "";
+	      	       while(scan.hasNextLine()){
+	      	        content=content.concat(scan.nextLine() + "\n");
+	      	        textArea.setText(content);
+
+	      	            }
+
+	      	    
+	      	    }
+	      	    catch (IOException ex)  
+	      	    {
+
+	      	    }
+	
+	      	}
+	      });
+	      btnDisplay.setBounds(53, 490, 85, 30);
+	      panel_2.add(btnDisplay);
+	      
+	      JPanel panel_3 = new JPanel();
+	      panel_3.setBackground(new Color(255, 215, 0));
+	      panel_3.setBounds(682, 10, 194, 543);
+	      panel_3.setLayout(null);
+	      panel.add(panel_3);
+	      
+	      JButton btnNewButton_1 = new JButton("Back");
+	      btnNewButton_1.addActionListener(new ActionListener() {
+	      	public void actionPerformed(ActionEvent e) {
+	      		frame.dispose();
+				new Project();
+	      	}
+	      });
+	      btnNewButton_1.setBounds(59, 495, 85, 27);
+	      panel_3.add(btnNewButton_1);
+	      
+	      JPanel panel_4 = new JPanel();
+	      panel_4.setBackground(new Color(175, 238, 238));
+	      panel_4.setBounds(227, 10, 444, 82);
+	      panel_4.setLayout(null);
+	      panel.add(panel_4);
+	      
+	      JLabel lblNewLabel_1 = new JLabel("Edit Form");
+	      lblNewLabel_1.setFont(new Font("Times New Roman", Font.PLAIN, 30));
+	      lblNewLabel_1.setBounds(158, 31, 148, 29);
+	      panel_4.add(lblNewLabel_1);
+ 
+	     
+	}
+}
