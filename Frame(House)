@@ -1,0 +1,365 @@
+
+import java.awt.EventQueue;
+import java.io.File;
+import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+
+
+import javax.swing.*; 
+import java.awt.*; 
+import java.awt.event.*;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import java.awt.BorderLayout;
+
+public class Project3 {
+
+	private JFrame frame;
+	
+	 private JLabel askLabel;
+	   private JButton uumButton;
+	   private JButton swButton;
+	   private JButton utButton;
+	   private JTextArea tout;
+	   private JLabel title;
+	   private JButton reset;
+	   private JButton reset_1;
+	   private JButton reset_2;
+	   private JPanel panel_2;
+	   private JPanel panel_3;
+	   private JTextField textField;
+	   private JButton btnNewButton;
+	   private JTextField textField_1;
+      private JButton button_1;
+
+		public Project3() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frame = new JFrame();
+		
+		frame.setSize(900,600);
+	      frame.setLocationRelativeTo(null);
+	      frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+         frame.setVisible(true);
+	      
+	      JPanel panel = new JPanel();
+	      frame.getContentPane().add(panel);
+	      panel.setLayout(null);
+ 
+	      JPanel panel_1 = new JPanel();
+	      panel_1.setBackground(new Color(224, 255, 255));
+	      panel_1.setBounds(21, 70, 446, 470);
+	      panel_1.setLayout(null);
+	      panel.add(panel_1);
+	      
+	      uumButton= new JButton("Shop");
+	      uumButton.setBackground(new Color(255, 215, 0));
+	      uumButton.addActionListener(new ActionListener() {
+	      	public void actionPerformed(ActionEvent e) {
+	      		try
+	      	    {
+	      	      File file=new File("/Users/User/Desktop/Shop.txt");
+	      	      Scanner scan= new Scanner(file);
+	      	       String content = "";
+	      	       while(scan.hasNextLine()){
+	      	        content=content.concat(scan.nextLine() + "\n");
+	      	        tout.setText(content);
+
+	      	            }
+
+	      	    
+	      	    }
+	      	    catch (IOException ex)  
+	      	    {
+
+	      	    }
+	      		   
+	      		       tout.setEditable(false);
+                     reset_2.setVisible(false);
+                     reset_1.setVisible(false);
+	      		     reset.setVisible(true);
+	      	}
+	      });
+	      uumButton.setBounds(174,150,94,35);
+	      panel_1.add(uumButton);
+	      
+	      askLabel = new JLabel("Please pick a section from the list below:");
+	      askLabel.setFont(new Font("Arial", Font.PLAIN, 20)); 
+	      askLabel.setSize(400, 25); 
+	      askLabel.setLocation(36, 71); 
+	      panel_1.add(askLabel);
+	      
+	      swButton= new JButton("WorkPlace");
+	      swButton.setBackground(new Color(255, 255, 0));
+	      swButton.addActionListener(new ActionListener() {
+	      	public void actionPerformed(ActionEvent e) {
+	      		try
+	      	    {
+	      	      File file=new File("/Users/User/Desktop/WorkPlace.txt");
+	      	      Scanner scan= new Scanner(file);
+	      	       String content3 = "";
+	      	       while(scan.hasNextLine()){
+	      	        content3=content3.concat(scan.nextLine() + "\n");
+	      	        tout.setText(content3);
+
+	      	            }
+
+	      	    
+	      	    }
+	      	    catch (IOException ex)  
+	      	    {
+	      	         }
+
+	      	        
+	      	        
+	      		            tout.setEditable(false);
+	      		          reset_2.setVisible(false);
+                         reset_1.setVisible(true);
+	      		         reset.setVisible(false);
+
+
+
+	      	}
+	      });
+	      swButton.setBounds(174,300,94,35);
+	      panel_1.add(swButton);
+	      
+	      utButton= new JButton("ReligiousSites");
+	      utButton.setBackground(new Color(255, 192, 203));
+	      utButton.addActionListener(new ActionListener() {
+	      	public void actionPerformed(ActionEvent e) {
+	      		 try
+		          {
+		            File file=new File("/Users/User/Desktop/ReligiousSites.txt");
+		            Scanner scan= new Scanner(file);
+		             String content2 = "";
+		             while(scan.hasNextLine()){
+		              content2=content2.concat(scan.nextLine() + "\n");
+		              tout.setText(content2);
+
+		                  }
+
+		          
+		          }
+		          catch (IOException ex)  
+		          {
+
+		                  }        
+		                     
+		                tout.setEditable(false);
+		                reset_2.setVisible(true);
+	                   reset_1.setVisible(false);
+		      		    reset.setVisible(false);
+		      		    
+	      	}
+	      });
+	      utButton.setBounds(174,223,94,35);
+	      panel_1.add(utButton);
+	      
+	      textField_1 = new JTextField();
+	      textField_1.setBounds(10, 10, 308, 34);
+	      panel_1.add(textField_1);
+	      textField_1.setColumns(10);
+	      
+	      JButton btnNewButton_1 = new JButton("Search");
+	      btnNewButton_1.addActionListener(new ActionListener() {
+	      	public void actionPerformed(ActionEvent e) {
+	      		String answer= textField_1.getText();
+	      		
+	      		if(answer.equals("Shop")) {
+	      			 try
+	 	      	    {
+	 	      	      File file=new File("/Users/User/Desktop/Shop.txt");
+	 	      	      Scanner scan= new Scanner(file);
+	 	      	       String content = "";
+	 	      	       while(scan.hasNextLine()){
+	 	      	        content=content.concat(scan.nextLine() + "\n");
+	 	      	        tout.setText(content);
+
+	 	      	            }
+
+	 	      	    
+	 	      	    }
+	 	      	    catch (IOException ex)  
+	 	      	    {
+
+	 	      	    }
+	 	      		   
+	 	      		       tout.setEditable(false);
+	                      reset_2.setVisible(false);
+	                      reset_1.setVisible(false);
+	 	      		     reset.setVisible(true);
+
+	 	      		       
+	      		
+	      		}else if (answer.equals("WorkPlace")) {
+	      			try
+		      	    {
+		      	      File file=new File("/Users/User/Desktop/WorkPlace.txt");
+		      	      Scanner scan= new Scanner(file);
+		      	       String content3 = "";
+		      	       while(scan.hasNextLine()){
+		      	        content3=content3.concat(scan.nextLine() + "\n");
+		      	        tout.setText(content3);
+
+		      	            }
+
+		      	    
+		      	    }
+		      	    catch (IOException ex)  
+		      	    {
+		      	         }
+
+		      	        
+		      	        
+		      		            tout.setEditable(false);
+		      		          reset_2.setVisible(false);
+	                         reset_1.setVisible(true);
+		      		         reset.setVisible(false);
+
+
+	      		}else if(answer.equals("ReligiousSites")){
+	      			 try
+			          {
+			            File file=new File("/Users/User/Desktop/ReligiousSites.txt");
+			            Scanner scan= new Scanner(file);
+			             String content2 = "";
+			             while(scan.hasNextLine()){
+			              content2=content2.concat(scan.nextLine() + "\n");
+			              tout.setText(content2);
+
+			                  }
+
+			          
+			          }
+			          catch (IOException ex)  
+			          {
+
+			                  }        
+			                     
+			                tout.setEditable(false);
+			                reset_2.setVisible(true);
+		                   reset_1.setVisible(false);
+			      		    reset.setVisible(false);
+			      		    
+	      		}else {
+	      		
+	      			String nth= "not found";
+	      			tout.setText(nth);
+	      			
+	      		}
+	      			
+	      		
+	      	}
+	      });
+	      btnNewButton_1.setBounds(351, 10, 85, 34);
+	      panel_1.add(btnNewButton_1);
+         
+          JButton button = new JButton("back");
+	      button.addActionListener(new ActionListener() {
+	      	public void actionPerformed(ActionEvent e) {
+            frame.dispose();
+				new Project0();
+
+
+	      	}
+	      });
+	      button.setBackground(Color.YELLOW);
+	      button.setBounds(190, 435, 66, 25);
+	      panel_1.add(button);
+	      
+	      panel_2 = new JPanel();
+	      panel_2.setBackground(new Color(238, 130, 238));
+	      panel_2.setBounds(21, 9, 855, 51);
+	      panel_2.setLayout(null);
+	      panel.add(panel_2);
+	      
+	      title = new JLabel("S.O.P");
+	      title.setBounds(371, 10, 103, 35);
+	      panel_2.add(title);
+	      title.setFont(new Font("Arial Black", Font.PLAIN, 30));
+	      
+	      panel_3 = new JPanel();
+	      panel_3.setBackground(new Color(255, 215, 0));
+	      panel_3.setBounds(477, 70, 399, 470);
+	      panel_3.setLayout(null);
+	      panel.add(panel_3);
+	      
+	      reset= new JButton("Add");
+	      reset.setBackground(new Color(255, 192, 203));
+	      reset.addActionListener(new ActionListener() {
+	      	public void actionPerformed(ActionEvent e) {
+	      		frame.dispose();
+				new Edit7();
+	      	}
+	      });
+	      reset.setBounds(48,435,80,25);
+	      reset.setVisible(false);
+	      panel_3.add(reset);
+	      
+	      reset_1= new JButton("Add");
+	      reset_1.setBackground(new Color(255, 192, 203));
+	      reset_1.addActionListener(new ActionListener() {
+	      	public void actionPerformed(ActionEvent e) {
+	      		frame.dispose();
+				new Edit8();
+	      	}
+	      });
+	      reset_1.setBounds(48,435,80,25);
+	      reset_1.setVisible(false);
+	      panel_3.add(reset_1);
+	      
+	      reset_2= new JButton("Add");
+	      reset_2.setBackground(new Color(255, 192, 203));
+	      reset_2.addActionListener(new ActionListener() {
+	      	public void actionPerformed(ActionEvent e) {
+	      		frame.dispose();
+				new Edit9();
+	      	}
+	      });
+	      reset_2.setBounds(48,435,80,25);
+	      reset_2.setVisible(false);
+	      panel_3.add(reset_2);
+	      
+	      tout = new JTextArea(); 
+	      tout.setFont(new Font("Arial", Font.PLAIN, 15)); 
+	      tout.setBounds(10, 10, 379, 416); 
+	      tout.setLineWrap(true); 
+	      tout.setEditable(false); 
+	      tout.setColumns(10);
+	      panel_3.add(tout);
+	      
+	      btnNewButton = new JButton("Exit");
+	      btnNewButton.addActionListener(new ActionListener() {
+	      	public void actionPerformed(ActionEvent e) {
+	      		frame.dispose();
+	      	}
+	      });
+	      btnNewButton.setBackground(new Color(255, 192, 203));
+	      btnNewButton.setBounds(265, 437, 85, 21);
+	      panel_3.add(btnNewButton);
+         
+          button_1 = new JButton("Delete");
+	      button_1.addActionListener(new ActionListener() {
+	      	public void actionPerformed(ActionEvent e) {
+            String def=" ";
+	            tout.setText(def);
+
+	      	}
+	      });
+	      button_1.setBackground(new Color(255, 192, 203));
+	      button_1.setBounds(153, 437, 85, 21);
+	      panel_3.add(button_1);
+	      
+
+	      
+	      
+	}
+}
