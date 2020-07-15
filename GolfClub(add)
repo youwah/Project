@@ -246,7 +246,7 @@ row[1] = textMof.getText();
 row[2] = textFunction.getText();
 row[3] = textGLoft.getText();
 
-list.add(new info((String)row[0],(String) row[1],(String) row[2] ,(String)row[3]));
+
 
 // add row to the model
 model.addRow(row);
