@@ -247,7 +247,7 @@ row[1] = texttype.getText();
 row[2] = textcharacter.getText();
 row[3] = textstatus.getText();
 
-list.add(new infoBuilding((String)row[0],(String) row[1],(String) row[2] ,(String)row[3]));
+
 
 // add row to the model
 model.addRow(row);
