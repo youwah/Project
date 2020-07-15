@@ -244,7 +244,7 @@ row[1] = textic.getText();
 row[2] = textemail.getText();
 row[3] = textHT.getText();
 
-list.add(new infohouse((String)row[0],(String) row[1],(String) row[2] ,(String)row[3]));
+
 
 // add row to the model
 model.addRow(row);
