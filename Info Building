@@ -1,0 +1,53 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package project0;
+
+public class infoBuilding extends Building{
+    private String name;
+    private String type;
+    private String character;
+    private String status;
+
+    public infoBuilding(String name, String type, String character, String status) {
+        this.name = name;
+        this.type = type;
+        this.character = character;
+        this.status = status;
+    }
+
+    public String getname() {
+        return name;
+    }
+
+    public void setname(String name) {
+        this.name = name;
+    }
+
+    public String gettype() {
+        return type;
+    }
+
+    public void settype(String type) {
+        this.type = type;
+    }
+
+    public String getcharacter() {
+        return character;
+    }
+
+    public void setcharacter(String character) {
+        this.character = character;
+    }
+
+    public String getstatus() {
+        return status;
+    }
+
+    public void setstatus(String status) {
+        this.status = status;
+    }
+}
+
