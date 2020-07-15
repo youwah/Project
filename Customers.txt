@@ -1,0 +1,3 @@
+Name, IC.NO ,  EMAIL , House Type
+shamil/00110401327/shamil@gmail.com/bungalow
+yong/04120023461/yong@ymail.com/sem-D
