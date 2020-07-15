@@ -1,4 +1,4 @@
-
+package project0;
 import java.awt.EventQueue;
 import java.io.File;
 import java.util.Scanner;
@@ -274,6 +274,19 @@ public class Project3 {
 	      button.setBackground(Color.YELLOW);
 	      button.setBounds(190, 435, 66, 25);
 	      panel_1.add(button);
+         
+         JButton btnMore = new JButton("More");
+	      btnMore.addActionListener(new ActionListener() {
+	      	public void actionPerformed(ActionEvent e) {
+            frame.dispose();
+		new Building();		
+
+	      	}
+	      });
+	      btnMore.setBackground(Color.YELLOW);
+	      btnMore.setBounds(174, 370, 94, 35);
+	      panel_1.add(btnMore);
+
 	      
 	      panel_2 = new JPanel();
 	      panel_2.setBackground(new Color(238, 130, 238));
