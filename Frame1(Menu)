@@ -109,7 +109,7 @@ public class Project0 {
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				frame.dispose();
-				new Project3();
+				new Project2();
 			}
 		});
 		btnNewButton.setForeground(new Color(0, 0, 205));
@@ -128,7 +128,7 @@ public class Project0 {
       button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
          frame.dispose();
-				new Project3();
+				new Project2();
 			}
 		});
 
@@ -155,7 +155,7 @@ public class Project0 {
 		btnBuilding.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
          frame.dispose();
-				new Project2();
+				new Project3();
 			}
 		});
 		btnBuilding.setForeground(new Color(0, 0, 205));
